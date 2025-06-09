@@ -2,46 +2,55 @@ This repo consists of two python programs.
 
 About Task 1.py:
 
-This small Python script prompts the user for two numbers, converts them into floats, calculates their sum, difference, product, and quotient (when possible), and then displays each result. Here’s a step-by-step description:
+It asks the user to enter a number, checks if it's even or odd, and handles errors if the input is not a valid number.
 
-1. Prompt the user for two inputs.
-2. Convert the inputs to floating-point numbers
-3. Compute addition, subtraction, and multiplication
+Step-by-step:
+try:
+→ This starts a block where we try to run some code that might cause an error.
 
-Add = a + b
-Calculates the sum of a and b and stores it in a variable named Add.
+a = int(input("Enter a number to be checked: "))
+→ It asks the user to enter a number.
+→ It tries to convert the input into an integer using int().
 
-Sub = a - b
-Calculates a minus b and stores it in Sub.
+if a % 2 == 0:
+→ It checks if the number divides evenly by 2 (i.e., no remainder).
+→ If yes, it's an even number.
 
-Mul = a * b
-Calculates a times b and stores it in Mul.
-4. Print the results of those three operations
-5. Attempt division and handle “divide by zero” errors
+print(a, "is an even number.")
+→ This line prints that the number is even.
 
-The code wraps the division in a try–except block:
+else:
+→ If the number does not divide evenly by 2…
 
-Inside the try, Div = a / b calculates the quotient. If b is not zero, this line succeeds and prints “Division: ” along with the result (for example, if a = 5 and b = 2, it prints “Division: 2.5”).
+print(a, "is an odd number")
+→ It prints that the number is odd.
 
-If b is zero, Python would normally raise a ZeroDivisionError. In that case, execution jumps to the except block, which prints a friendly message:
-Error: You can't divide by zero!
-This prevents the program from crashing and informs the user that division by zero is not allowed.
+except ValueError:
+→ If the user types something that isn't a valid whole number (like letters or special characters), this block runs.
+
+print("Invalid input! Please enter a valid integer.")
+→ It tells the user the input was wrong and asks for a proper number.
+
+print("Thanks for checking!")
+→ This line prints no matter what — it always says thank you at the end.
+
+
 
 About Task 2.py:
 
-This script:
-1. Takes the user's first and last name as input,
-2. Combines them into a full name, and
-3. Prints a personalized greeting using an f-string.
+This code adds all the numbers from 1 to 50 together and prints the result.
 
-Line by line explanation:
---> Asks the user to type their first name.
---> The input is stored in a variable called a.
---> Asks for the last name, stored in variable b.
---> Combines the first name (a) and last name (b) with a space between them.
---> Stores the result in the variable fn (full name).
+Step-by-step:
+total_sum = 0
+→ We start with a total of 0.
 
-print(f"Hello, {fn}! Welcome to the Python program.")
-Uses an f-string to insert the full name into a custom greeting.
+for i in range(1, 51):
+→ We go through every number starting from 1 up to 50 (because range(1, 51) means 1 to 50, not including 51).
+
+total_sum += i
+→ Each number is added to the total.
+
+print(...)
+→ Finally, we print the total sum.
 
 Thanks!
